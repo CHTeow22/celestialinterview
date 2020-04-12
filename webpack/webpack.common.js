@@ -3,6 +3,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const shares = require('../src/scripts/shares.js');
 
 module.exports = {
   entry: {
@@ -48,7 +49,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/pages/shares.hbs"),
       filename: 'shares.html',
-      title: "Ørsted - Shares"
+      title: "Ørsted - Shares",
+      stock: shares
     }),
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, "../src/pages/whitepapers.hbs"),

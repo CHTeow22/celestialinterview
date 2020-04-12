@@ -1,5 +1,6 @@
 @import 'globals';
 @import 'stock';
+@import 'image';
 
 .article-corporate {
   max-width: none;
@@ -43,5 +44,32 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+}
+
+.small-title {
+  font-size: 38px;
+  padding-bottom: 20px;
+  line-height: normal;
+}
+
+.filter-tag {
+  padding: .75rem;
+
+  button {
+    border: none;
+    outline:none;
+    border-radius: 30px;
+    padding: 8px 20px;
+    margin-right: 5px;
+    background: $color-grey;
+    font-weight: $font-bold;
+    font-family: OrstedSansBold,sans;
+    cursor: pointer;
+  }
+
+  .active {
+    background-color: #4099da;
+    color: white;
   }
 }

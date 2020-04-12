@@ -18,7 +18,13 @@
         <section class="container-fluid narrow-container">
             <div class="row row-narrow">
                 <div class="col-12">
-                    <p>Please edit your code here</p>
+                    <p class="filter-tag">
+                        <button id="all">All</button>
+                        <button id="building-green">Buildng green</button>
+                        <button id="capital">Capital</button>
+                        <button id="greentech">Greentech</button>
+                        <button id="nature">Nature</button>
+                    </p>
                     <div class="richtext">
                         <table style="margin-top: 20px;">
                             <tbody>
@@ -265,3 +271,40 @@
         {{/body}}
 
 </html>
+
+<script type="text/javascript">
+    $('#all').addClass('active');
+
+    var btns =document.querySelectorAll('p.filter-tag button');
+    var tagsList =document.getElementsByClassName("whitepapers-tags");
+
+    $('button').on("click", function(e) {
+        var current = this.id;
+        $('button').removeClass('active');
+        $(this).addClass('active');
+
+        if(current == 'all') {
+            $(tagsList).closest('tr').css('display', 'block');
+            return;
+        }
+
+        for (var i = tagsList.length - 1; i >= 0; i--) {
+            var show = false;
+            var list = tagsList[i].querySelectorAll('li');
+
+            for (var j = list.length - 1; j >= 0; j--) {
+                if(list[j].getAttribute('data-tag') == current){
+                    show = true;
+                    break;
+                }
+            }
+
+            if(show) {
+                $(tagsList[i]).closest('tr').css('display', 'block');
+            } else {
+                $(tagsList[i]).closest('tr').css('display', 'none');
+            }
+
+        }
+    });
+</script>

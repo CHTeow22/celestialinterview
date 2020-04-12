@@ -30,3 +30,36 @@
     font-size: $font-size-xs !important;
   }
 }
+
+.img-box {
+  display: inline-block;
+  color: $color-white;
+  font-size: $font-size-xs;
+  width: 210px;
+  padding: 10px;
+  height: 210px;
+  margin: 15px 15px 0 0;
+
+  > span {
+    display: flex;
+  }
+
+  span:first-child {
+    color: $color-white;
+    font-size: $font-size-xxl-2;
+    font-weight: $font-bold;
+    margin-top: 3px;
+    float: left;
+    padding: 8px;
+    display: block;
+  }
+
+  img {
+    width: 70%;
+    margin: auto;    
+    display: block;
+    padding: 15px 5px 5px;
+  }
+}
+
+

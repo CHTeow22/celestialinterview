@@ -70,11 +70,38 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                    <p>Please add your code here</p>
+                <div class="col-md-6 col-sm-12 stockComponent" style="padding: 40px 20px;">
+                    <p class="share-title">Share price</p>
+                    <p class="big-stock">{{htmlWebpackPlugin.options.stock.bigStock}}</p>
+                    <p class="percentage strong">{{htmlWebpackPlugin.options.stock.stockDelta}} DKK / {{htmlWebpackPlugin.options.stock.stockDeltaPercent}} %</p>
+
+                    <table class="table-summary" style="width:100%">
+                      <tr>
+                        <td>Volume</td>
+                        <td class="strong">{{htmlWebpackPlugin.options.stock.volume}}</td>
+                      </tr>
+                      <tr>
+                        <td>Last updated</td>
+                        <td>{{htmlWebpackPlugin.options.stock.lastUpdated}}</td>
+                      </tr>
+                      <tr>
+                        <td>OMXC20</td>
+                        <td class="strong">{{htmlWebpackPlugin.options.stock.OMXC20}} <span class="percentage index-total">{{htmlWebpackPlugin.options.stock.OMXC20Diff}} / {{htmlWebpackPlugin.options.stock.OMXC20DiffPercent}} %</span></td>
+                      </tr>
+                    </table>
                 </div>
             </div>
         </section>
         {{/body}}
 
 </html>
+
+
+<script type="text/javascript">
+    var text = document.getElementsByClassName("percentage");
+    for (i = 0; i < text.length; i++) {
+        if(text[i].innerText.indexOf('-') > -1) {
+            $(text[i]).addClass('red-text');
+        } 
+    }
+</script>

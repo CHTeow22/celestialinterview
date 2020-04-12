@@ -1,0 +1,43 @@
+%stockComponent {
+	.share-title {
+	  margin-bottom: 30px;
+	  font-size: $font-size-xl-2;
+	  font-weight: $font-bold;
+	}
+	.big-stock {
+		color: $color-blue-3;
+		font-size: $font-size-xxl;
+		line-height: $font-size-xxl;
+		font-weight: $font-bold;
+		padding-top: $font-size-xxl;
+	}
+
+	.percentage {
+		color: green;
+	}
+
+	.strong {
+		font-weight: 800;
+	}
+
+	.table-summary {
+		margin-top: 30px;
+		tr td:first-child {
+			width: 50%;
+		}
+		.index-total {
+			font-weight: normal !important;
+			padding-left: 5px; 
+		}
+
+	}
+}
+
+.stockComponent {
+	@extend %stockComponent;
+}
+
+.red-text {
+	color: red !important;
+}
+
